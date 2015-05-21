@@ -9,7 +9,7 @@
                 "name": "Samuel Mercado",
                 "email": "samuel.mg@gmx.com"
             }
-        ]
+        ],
     "require": {
         "php": ">=5.3.0",
     }
