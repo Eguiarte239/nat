@@ -1,13 +1,13 @@
 {
     "name": "samuelmg/nat",
     "description": "Convertidor de número a letra en español",
-    "keywords": ["convertidor", "numeros", "letras", "cheques", "español"],
+    "keywords": ["convertidor", "numeros", "letras", "cheques", "español", "pesos"],
+    "homepage": "http://github.com/samuelmg/nat",
     "license": "MIT",
     "authors": [
             {
                 "name": "Samuel Mercado",
                 "email": "samuel.mg@gmx.com"
-                
             }
         ]
     "require": {
