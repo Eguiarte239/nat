@@ -90,7 +90,9 @@ class Nat {
     private function menor_cien($ud)
     {
         //elige menores a 20 y multiplos de 10
-        if ( ($ud < 20) || ($ud%10 == 0) ) {
+        if ($ud == 0 ) {
+            $ud_txt = '';
+        } elseif ( ($ud < 20) || ($ud%10 == 0) ) {
             $ud_txt = $this->simple[$ud];
         } else {
             $ud_txt = $this->compuesto[$ud/10].$this->simple[$ud%10];
