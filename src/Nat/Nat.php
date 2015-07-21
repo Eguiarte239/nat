@@ -204,7 +204,11 @@ class Nat {
             return ("(".$letras." 00/100)");
         } else {
             $dec = strchr($this->numero,".");
-            $d = $dec['1'].(integer)$dec['2'];
+            if(empty($dec[2])) {
+                $d = $dec['1'].'0';
+            } else {
+                $d = $dec['1'].(integer)$dec['2'];
+            }
             return ("(".$letras." ".$d."/100)");
         }
 
