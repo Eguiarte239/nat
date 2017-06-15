@@ -31,6 +31,7 @@ class Nat {
 
     private function set_variables ()
     {
+        $this->simple['0']='CERO';
         $this->simple['1']='UN';
         $this->simple['2']='DOS';
         $this->simple['3']='TRES';
@@ -127,13 +128,14 @@ class Nat {
     //Inicio de Conversión
     public function convertir()
     {
-        if($this->numero_entero == 0){
-            return "---";
-        }
         $n_str = (string)$this->numero_entero;//Convierte el número entero a cadena
 
+        if($this->numero_entero == 0){
+            $letras = $this->simple[0] . " " . $this->moneda;
+        }
+
         //Numero < 1000
-        if ( $this->numero_entero < 1000 )
+        elseif ( $this->numero_entero < 1000 )
         {
             $n = $this->numero_entero;
             $n_txt = $this->menor_mil($n);
