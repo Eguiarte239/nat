@@ -1,7 +1,6 @@
 <?php
 
 namespace Nat;
-
 class Nat
 {
     private $simple;
@@ -14,16 +13,20 @@ class Nat
     private $numero;
     private $moneda;
     private $numero_entero;
+    private $es_unidad_medida;
 
-    public function __construct($numero, $moneda)
+    public function __construct(float $numero, ?string $moneda = null, bool $es_unidad_medida = false)
     {
         $this->numero = $numero;
-        $this->numero_entero = (integer)$numero;
+        $this->numero_entero = $numero;
+        $this->es_unidad_medida = $es_unidad_medida;
 
-        if (empty($moneda)) {
-            $this->moneda = "PESOS";
-        } else {
-            $this->moneda = strtoupper($moneda);
+        if($this->es_unidad_medida){
+            if (is_null($moneda)) {
+                $this->moneda = "PESOS";
+            } else {
+                $this->moneda = strtoupper($moneda);
+            }
         }
 
         $this->set_variables();
@@ -32,7 +35,7 @@ class Nat
     private function set_variables()
     {
         $this->simple['0']='CERO';
-        $this->simple['1']='UN';
+        $this->es_unidad_medida ? $this->simple['1']='UN' : $this->simple['1']='UNO';
         $this->simple['2']='DOS';
         $this->simple['3']='TRES';
         $this->simple['4']='CUATRO';
